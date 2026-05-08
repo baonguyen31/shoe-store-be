@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cuahang_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: "root"
+    password: "tribao123"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  mail:
+      host: smtp.gmail.com
+      port: 587
+      username: "nguyenchibao310503@gmail.com"
+      password: "odpc eels fzcb toel" # Mã 16 ký tự lấy từ Google App Password
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+      default-encoding: UTF-8
+
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dG1kdF91ZF9zZWNyZXRfa2V5X2F0X2xlYXN0XzI1Nl9iaXRzX2xvbmc=}
+  momo:
+    secret: ${MOMO_SECRET:S9zH3cQ0l7j3y8v0}
+
+logging:
+  level:
+    org:
+      hibernate:
+        engine:
+          jdbc:
+            connections:
+              internal: DEBUG
+
+
